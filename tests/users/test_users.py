@@ -3,6 +3,9 @@ import pytest
 from src.baseclasses.response import Response
 from src.schemas.user import User
 
+from src.schemas.computer import Computer
+from examples import computer
+
 
 def test_getting_users_list(get_users, make_number):
     Response(get_users).assert_status_code(200).validate(User)
@@ -38,3 +41,8 @@ def test_calculator(first_value, second_value, result, calculate):
 @pytest.mark.production
 def test_another_failing_t():
     assert 1 == 2
+
+
+def test_pydantic_object():
+    comp = Computer.parse_obj(computer)
+    print(comp.detailed_info.physical.color)

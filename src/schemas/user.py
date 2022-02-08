@@ -6,6 +6,7 @@ class User(BaseModel):
     id: int
     name: int
     email: str
+    password: str
     gender: Genders
     status: Statuses
 
