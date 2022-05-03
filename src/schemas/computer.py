@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, validator
 from pydantic.types import PastDate, FutureDate, List, PaymentCardNumber
 from pydantic.networks import IPv4Address, IPv6Address
 from src.schemas.physical import Physical
@@ -27,6 +27,34 @@ class Computer(BaseModel):
     host_v6: IPv6Address
     detailed_info: DetailedInfo
 
-comp = Computer.parse_obj(computer)
 
-print(comp.schema_json())
+class Human(BaseModel):
+    name: str
+    last_name: str
+    surname: str = None
+    is_hide: bool
+
+    @validator('is_hide')
+    def validate_surname_showing(cls, hide_value, values):
+        if hide_value is False and values.get('surname') is None:
+            raise ValueError('Surname should be presented')
+        return hide_value
+
+
+human = Human.parse_obj({
+    "name": "Andrii",
+    "last_name": "Shevchenko",
+    "is_hide": True
+})
+
+class Inventory(BaseModel):
+    sold: int
+    string: int
+    unavailable: int
+    pending: int
+    available: int
+    not_available: int
+    status01: int
+    status: int
+
+

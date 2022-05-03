@@ -1,6 +1,7 @@
 
 from enum import Enum
 
+
 class PyEnum(Enum):
 
     @classmethod

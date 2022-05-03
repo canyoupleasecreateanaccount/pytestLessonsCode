@@ -1,7 +1,9 @@
 
 
 class BuilderBaseClass:
-
+    """
+    As u can see, it is builder base class
+    """
     def __init__(self):
         self.result = {}
 

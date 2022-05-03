@@ -1,3 +1,55 @@
+from db import session
+
+import tables
+
+from sqlalchemy.sql.expression import desc
+
+
+# result = session.query(
+#     tables.Films.film_id, tables.Films.title
+# ).filter(
+#     tables.Films.film_id > 100,
+#     tables.Films.film_id < 150
+# ).all()
+
+
+
+film_ids = session.query(
+    tables.Films.film_id,
+    tables.Films.title
+).order_by(tables.Films.film_id).limit(2).offset(3).all()
+
+
+print(film_ids)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 computer = {
     "id": 21,
     "status": "ACTIVE",
