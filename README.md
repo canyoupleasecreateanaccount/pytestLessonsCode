@@ -1,5 +1,23 @@
-# pytestLessonsCode
-Code of pytest from youtube lessons. 
-More info u can find here: 
+# Pytest lessons
 
-https://www.youtube.com/watch?v=s_aG4tBJoeI&amp;list=PLB2iiSfKWtvykq9s0plSVI_Du60i0iphU&amp;ab_channel=SolveMe
+
+###Вступление
+Привет дорогой друг, этот проект был создан на основе курсов по Pytest. 
+Каждый кусочек кода написан и оговорен в видео на ютуб канале.
+
+###Ссылка на канал:
+https://www.youtube.com/c/SolveMeChannel
+
+###Немного об идее:
+Надеюсь, всё добро, которое вы сможете найти в этом проекте, станет для вас
+небольшой подсказкой и первой ступенью на пути к освоению автоматизации на Python + Pytest.
+Я постарался написать небольшие комментарии к каждому кусочку кода, чтобы вам было проще понять 
+не особо вдаваясь в подробности и не тратя много времени на разбор.
+
+###Donation
+Для тех, кто хочет поддержать нас :) 
+
+####BSC20
+``0x3EC81929e06950322d5125d8e6CA834F3d9B21f8``
+
+DOGE | BNB | CAKE | ADA | BUSD
