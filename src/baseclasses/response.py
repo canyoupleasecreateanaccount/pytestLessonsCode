@@ -8,6 +8,11 @@ class Response:
     валидации данных. На вход он принимает объект респонса и разбирает его.
     Вы можете добавить кучу различных методов в этом классе, которые нужны
     вам в работе с данными после их получения.
+
+    It's useful class that helps to save a lot of code during validatio
+    process in our tests. It receives response object and gets from it all
+    values that should be validated. You can add additional methods into the
+    Class if it needs for your project testing.
     """
 
     def __init__(self, response):
@@ -34,6 +39,9 @@ class Response:
         Метод для валидации статус кода. Из объекта респонса,
         который мы получили, мы берём статус и сравнимаем с тем, который
         нам был передан как параметр.
+
+        Method for status code validation. It compares value from response
+        object and compare it with received value from method params.
         """
         if isinstance(status_code, list):
             assert self.response_status in status_code, self
@@ -45,6 +53,16 @@ class Response:
         return self.parsed_object
 
     def __str__(self):
+        """
+        Метод отвечает за строковое представление нашего объекта. Что весьма
+        удобно, ведь в случае срабатывания валидации, мы получаем полную картину
+        всего происходящего и все параметры которые нам нужны для определения
+        ошибки.
+
+         Method for string displaying of class instance. In case when our
+         validation will be failed, we will get full information about our
+         object and comparation data, that will help us in fail investigation.
+        """
         return \
             f"\nStatus code: {self.response_status} \n" \
             f"Requested url: {self.response.url} \n" \

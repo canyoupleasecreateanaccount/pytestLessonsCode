@@ -6,6 +6,8 @@ fake = Faker()
 
 """
 Простенький генератор ItemType.
+
+Common generator of ItemType.
 """
 
 

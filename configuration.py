@@ -1,5 +1,7 @@
 """
 Обычный конфигурационный файл, который должен быть в любом проекте :)
+
+Default configuration file, that should be in each project :)
 """
 
 SERVICE_URL = 'https://gorest.co.in/public/v1/users'

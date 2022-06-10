@@ -2,7 +2,9 @@ from pydantic import BaseModel, validator
 from src.enums.user_enums import Genders, Statuses, UserErrors
 
 """
-Пример описания pydantic model с использованием Enum и validator
+Пример описания pydantic model с использованием Enum и validator.
+
+Example of describing pydantic model with using ENUM and validator features.
 """
 
 
@@ -19,6 +21,9 @@ class User(BaseModel):
         """
         Проверяем наше поле email, что в нём присутствует @ и в случае
         если она отсутствует, возвращаем ошибку.
+
+        Checking fild email that in the filed contain @ and if it absent returns
+        error, if not pass.
         """
         if '@' in email:
             return email

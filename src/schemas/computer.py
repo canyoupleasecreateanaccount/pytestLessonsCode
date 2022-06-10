@@ -5,7 +5,9 @@ from src.schemas.physical import Physical
 
 """
 Именно в этом файле можно поиграться с уже готовой моделью и примером
-тестового объекта для неё.
+тестового объекта для неё (Human).
+
+That file gives to you possibility to play with ready to use model (Human).
 """
 
 from src.enums.user_enums import Statuses
@@ -43,9 +45,8 @@ class Human(BaseModel):
         """
         Пример валидатора, который используется для проверки значения в поле
         is_hide.
-        :param hide_value:
-        :param values:
-        :return:
+
+        Example of validator that we use for checking is_hide field.
         """
         if hide_value is False and values.get('surname') is None:
             raise ValueError('Surname should be presented')

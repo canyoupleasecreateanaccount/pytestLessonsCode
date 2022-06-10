@@ -4,6 +4,9 @@ class BuilderBaseClass:
     """
     Базовый класс для билдера. Вы его можете дополнить ещё другими полезными
     методами, сейчас представлен только один.
+
+    Base class for builder. You can add additional useful methods, but for now
+    it has only one.
     """
     def __init__(self):
         self.result = {}
@@ -12,6 +15,9 @@ class BuilderBaseClass:
         """
         Этот метод помогает обновить/добавить новое значение в объекте на
         указанном вами уровне.
+
+        The method helps us update and add new values into object on specified
+        level.
         """
         if not isinstance(keys, list):
             self.result[keys] = value

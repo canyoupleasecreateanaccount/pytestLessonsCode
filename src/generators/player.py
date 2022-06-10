@@ -3,6 +3,12 @@ from src.enums.user_enums import Statuses
 from src.baseclasses.builder import BuilderBaseClass
 from src.generators.player_localization import PlayerLocalization
 
+"""
+Не совсем простенький генератор Player.
+
+Uncommon generator for Player ^_^.
+"""
+
 
 class Player(BuilderBaseClass):
 
