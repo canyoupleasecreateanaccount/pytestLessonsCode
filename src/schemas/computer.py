@@ -2,7 +2,11 @@ from pydantic import BaseModel, EmailStr, validator
 from pydantic.types import PastDate, FutureDate, List, PaymentCardNumber
 from pydantic.networks import IPv4Address, IPv6Address
 from src.schemas.physical import Physical
-from examples import computer
+
+"""
+Именно в этом файле можно поиграться с уже готовой моделью и примером
+тестового объекта для неё.
+"""
 
 from src.enums.user_enums import Statuses
 
@@ -36,6 +40,13 @@ class Human(BaseModel):
 
     @validator('is_hide')
     def validate_surname_showing(cls, hide_value, values):
+        """
+        Пример валидатора, который используется для проверки значения в поле
+        is_hide.
+        :param hide_value:
+        :param values:
+        :return:
+        """
         if hide_value is False and values.get('surname') is None:
             raise ValueError('Surname should be presented')
         return hide_value
@@ -47,6 +58,7 @@ human = Human.parse_obj({
     "is_hide": True
 })
 
+
 class Inventory(BaseModel):
     sold: int
     string: int
@@ -56,5 +68,3 @@ class Inventory(BaseModel):
     not_available: int
     status01: int
     status: int
-
-

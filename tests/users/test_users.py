@@ -8,8 +8,12 @@ from examples import computer
 
 
 def test_getting_users_list(get_users, make_number):
+    """
+    Пример использования фикстуры которая отправляет запрос и возвращает
+    респонс. Далее мы просто обрабатываем его с помощью нашего Response class
+    применяя все доступные валидации.
+    """
     Response(get_users).assert_status_code(200).validate(User)
-    # print(make_number)
 
 
 @pytest.mark.development
@@ -17,7 +21,9 @@ def test_getting_users_list(get_users, make_number):
 @pytest.mark.skip('[ISSUE-23414] Issue with network connection')
 def test_another():
     """
-    In that test we try to check that 1 is equal to 2
+    Обычный тест, но не совсем. Обратите внимание на декораторы к нему.
+    Мы скипаем его с определённым сообщением, а так же помечаем с каким скоупом
+    его выполнять.
     """
     assert 1 == 2
 
@@ -32,17 +38,16 @@ def test_another():
 ])
 def test_calculator(first_value, second_value, result, calculate):
     """
-    In test we are testing calculating with different values(Valid and invalid)
+    Вариант параметризации нашего теста, с несколькими параметрами за один
+    раз.
     """
     assert calculate(first_value, second_value) == result
 
 
-@pytest.mark.development
-@pytest.mark.production
-def test_another_failing_t():
-    assert 1 == 2
-
-
 def test_pydantic_object():
+    """
+    Пример того, как после инициализации pydantic объекта, можно получить
+    доступ к любому из его параметров.
+    """
     comp = Computer.parse_obj(computer)
     print(comp.detailed_info.physical.color)

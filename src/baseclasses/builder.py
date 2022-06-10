@@ -2,12 +2,17 @@
 
 class BuilderBaseClass:
     """
-    As u can see, it is builder base class
+    Базовый класс для билдера. Вы его можете дополнить ещё другими полезными
+    методами, сейчас представлен только один.
     """
     def __init__(self):
         self.result = {}
 
     def update_inner_value(self, keys, value):
+        """
+        Этот метод помогает обновить/добавить новое значение в объекте на
+        указанном вами уровне.
+        """
         if not isinstance(keys, list):
             self.result[keys] = value
         else:
