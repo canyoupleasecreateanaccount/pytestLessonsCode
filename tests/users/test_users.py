@@ -2,8 +2,8 @@ import pytest
 
 from src.baseclasses.response import Response
 from src.schemas.user import User
-
 from src.schemas.computer import Computer
+
 from examples import computer
 
 

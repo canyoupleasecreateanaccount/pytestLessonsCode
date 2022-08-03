@@ -3,9 +3,7 @@ import pytest
 
 from src.generators.player_localization import PlayerLocalization
 from src.enums.user_enums import Statuses
-
 from src.baseclasses.response import Response
-
 from src.schemas.computer import Inventory
 
 import tables

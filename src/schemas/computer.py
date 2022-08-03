@@ -1,6 +1,7 @@
 from pydantic import BaseModel, EmailStr, validator
 from pydantic.types import PastDate, FutureDate, List, PaymentCardNumber
 from pydantic.networks import IPv4Address, IPv6Address
+
 from src.schemas.physical import Physical
 
 """

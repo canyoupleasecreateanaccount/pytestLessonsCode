@@ -3,10 +3,11 @@ import pytest
 from random import randrange
 
 import tables
-from src.generators.player import Player
-from src.generators.item_type_generator import ItemsTypeBuilder
 
 from db import Session
+
+from src.generators.player import Player
+from src.generators.item_type_generator import ItemsTypeBuilder
 
 
 @pytest.fixture
