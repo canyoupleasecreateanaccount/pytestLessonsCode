@@ -165,3 +165,29 @@ def get_delete_method():
     Example of fixture, that returns delete method as object into our tests.
     """
     return delete_test_data
+
+
+def pytest_addoption(parser):
+    """
+    Этот метод добавляет к стандартным ключам запуска, кастомные ключи, которые
+    вы можете указать ниже.
+
+    The method gives possibility to add custom console keys to your project.
+    """
+    parser.addoption(
+        '--env',
+        default='development',
+        help='It is env variable where our tests will be run. Possible values:'
+             'prod, development(default), qa'
+    )
+
+
+@pytest.fixture(autouse=True)
+def getting_env(request):
+    """
+    Фикстура парсит значение ключа и возвращает его в тест.
+
+    The fixture parses env variable and return it into test case.
+    """
+    env = request.config.getoption('--env')
+    yield env
